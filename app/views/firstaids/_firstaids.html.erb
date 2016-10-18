@@ -1,0 +1,5 @@
+<% if @firstaids.present? %>
+	<%= render @firstaids %>
+<% else %>
+	<p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>

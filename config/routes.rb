@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :firstaids
-  resources :palliative_cares
-  resources :survival_guides
+	resources :firstaids
+	resources :palliative_cares
+	resources :survival_guides
 	resources :severities
 	resources :vitals
 	resources :symptoms
@@ -9,21 +9,35 @@ Rails.application.routes.draw do
 
 	match ':controller(/:action(/:id))', :via => [:get, :post]
 
+	get 'searchby/index'
+
+	get 'searchby/firstaids'
+	post 'searchby/firstaids'
+
+	get 'searchby/symptoms'
+	post 'searchby/symptoms'
+
+	get 'searchby/vitals'
+	post 'searchby/vitals'
+
+	get 'firstaids/index'
+	post 'firstaids/index'
+
 	get 'home/index'
 
 	get 'home/how_to'
 
-    post 'home/how_to'
+	post 'home/how_to'
 
 	get 'home/survival_guide'
 
 	post 'home/survival_guide'
 
-    get 'home/palliative_care'
+	get 'home/palliative_care'
 
-    post 'home/palliative_care'
+	post 'home/palliative_care'
 
-    get 'landing/searchby_emergency'
+	get 'landing/searchby_emergency'
 
 	get 'landing/searchby_symptoms'
 

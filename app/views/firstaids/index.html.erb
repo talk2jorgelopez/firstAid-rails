@@ -1,4 +1,8 @@
 <%- model_class = Firstaid -%>
+<%= form_tag(firstaids_path, :method => "get", id: "searchby-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search First Aid" %>
+	<%= submit_tag "Search" %>
+<% end %>
 <div class="page-header">
   <h3> First Aid Entry</h3>
 </div>

@@ -1,10 +1,15 @@
 class FirstaidsController < ApplicationController
-  before_action :set_firstaid, only: [:show, :edit, :update, :destroy]
-
+  before_action  only: [:show, :edit, :update, :destroy, :index]
+  #:set_firstaid
   # GET /firstaids
   # GET /firstaids.json
   def index
     @firstaids = Firstaid.all
+    if params[:search]
+	    @firstaids = Firstaid.search(params[:search]).order("created_at DESC")
+    else
+	    @firstaids = Firstaid.all.order("created_at DESC")
+    end
   end
 
   # GET /firstaids/1
@@ -63,9 +68,9 @@ class FirstaidsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_firstaid
-      @firstaid = Firstaid.find(params[:id])
-    end
+   # def set_firstaid
+   #   @firstaid = Firstaid.find(params[:id])
+   # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def firstaid_params

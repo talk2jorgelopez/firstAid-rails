@@ -1,9 +1,9 @@
 class LandingController < ApplicationController
-  def home
-  end
+	def home
+	end
 
-  def searchby_emergency
-  end
+	def searchby_emergency
+	end
 
   def searchby_symptoms
   end
@@ -11,18 +11,6 @@ class LandingController < ApplicationController
   def searchby_vitals
   end
 
-  def tasks
-  end
-
-  def how_to
-  end
-
-  def survival_guide
-  end
-
-  def palliative
-  end
-
-  def maintenance
-  end
+   def maintenance
+   end
 end

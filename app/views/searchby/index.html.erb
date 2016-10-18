@@ -1,0 +1,6 @@
+<h1>Search by All</h1>
+
+<%= form_tag(searchby_index_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+	<%= submit_tag "Search" %>
+<% end %>

@@ -39,58 +39,66 @@
 
 </head>
 <body>
-<nav class="navbar bg-primary navbar-default">
-	<div class="container-fluid">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#firstAidNav" >
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="/home">First Aid App</a>
-			<div class="collapse navbar-collapse bg-inverse p-a-1 " id="firstAidNav">
-				<ul id="firstAidNav-list" class="nav navbar-nav">
-					<li class="active"><%= link_to "Home", "/home"  %></li>
+<div id="wrap">
+	<nav class="nav-top navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<div class="pull-left">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseLeft">
+						<span class="sr-only"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<a class="navbar-brand" href="#">First Aid App</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="collapseLeft">
+				<ul class="nav navbar-nav">
+					<li class="active"><%= link_to "Home", home_index_path  %></li>
 					<li><%= link_to "Palliative Care", home_palliative_care_path  %></li>
 					<li><%= link_to "How to", home_how_to_path  %></li>
 					<li><%= link_to "Survival Guide", home_survival_guide_path  %></li>
 				</ul>
 			</div>
 		</div>
-</nav>
+	</nav> <!-- /nav -->
 
-<!--&#9776;-->
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-9">
-			<%= bootstrap_flash %>
-			<%= yield %>
-		</div>
-		<div class="col-sm-3">
-			<div class="well sidebar-nav">
-				<h4>Quick Search</h4>
-				<ul class="nav nav-list">
-					<li><%= link_to "Severity", "/severities"  %></li>
-					<li><%= link_to "Vitals", "/vitals"  %></li>
-					<li><%= link_to "Symptoms", "/symptoms"  %></li>
-				</ul>
-			</div><!--/.well -->
-		</div><!--/span-->
-	</div><!--/row-->
-</div>
-
-<nav class="bottom navbar navbar-inverse navbar-fixed-bottom" style="color: #FFF">
+	<!--&#9776;-->
 	<div class="container-fluid">
-		<div class="bottom navbar-header">
-			<p class="bottom navbar-brand">To Do:</p>
-			<ul class="bottom nav navbar-nav" style="color: #FFF;">
-				<li class="bottom white"><%= link_to "Tasks", "#"  %></li>
-				<li><%= link_to "Timers", "#"  %></li>
-			</ul>
-		</div>
+		<div class="row">
+			<div class="col-sm-9">
+				<%= bootstrap_flash %>
+				<%= yield %>
+			</div>
+			<div class="col-sm-3">
+				<div class="well sidebar-nav">
+					<h4>Quick Search</h4>
+					<ul class="nav nav-list">
+						<li><%= link_to "First Aid Treatments", searchby_firstaids_path  %></li>
+						<li><%= link_to "Vitals", searchby_vitals_path %></li>
+						<li><%= link_to "Symptoms", searchby_symptoms_path  %></li>
+					</ul>
+				</div><!--/.well -->
+			</div><!--/span-->
+		</div><!--/row-->
 	</div>
-	<p style="margin-left: 12px; color: #fff">&copy; IT 251 2016</p>
-</nav>
 
+	<footer class="bottom">
+		<div class="bottom col-xs-12 navbar-inverse navbar-fixed-bottom">
+			<div class="bottom row" id="bottomNav">
+				<div class="bottom col-xs-3 text-center"><a class="bottom" href="#"><i class="glyphicon glyphicon glyphicon-home text-white"></i><br>Home</a></div>
+				<div class="bottom col-xs-3 text-center"><a class="bottom" href="#"><i class="glyphicon glyphicon glyphicon-time text-white"></i><br>Timers</a></div>
+				<div class="bottom col-xs-3 text-center"><a class="bottom" href="#"><i class="glyphicon glyphicon glyphicon-dashboard text-white"></i><br>To Do</a></div>
+				<div class="bottom col-xs-3 text-center"><a class="bottom" href="#"><i class="glyphicon glyphicon glyphicon-search text-white"></i><br>Search</a></div>
+			</div>
+		</div>
+
+	</footer> <!-- /footer -->
+
+</div> <!-- /wrapper -->
 </body>
 </html>
