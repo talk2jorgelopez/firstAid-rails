@@ -1,0 +1,1 @@
+json.partial! "firstaids/firstaid", firstaid: @firstaid

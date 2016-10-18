@@ -1,0 +1,48 @@
+<%= form_for @survival_guide, :html => { :class => "form-horizontal survival_guide" } do |f| %>
+
+  <% if @survival_guide.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@survival_guide.errors.count, "error") %> prohibited this survival_guide from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @survival_guide.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :guide_title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :guide_title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:guide_title) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :guide_para1, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :guide_para1, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:guide_para1) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :guide_para2, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :guide_para2, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:guide_para2) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                survival_guides_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

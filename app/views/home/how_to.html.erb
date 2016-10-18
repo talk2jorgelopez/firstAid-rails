@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3>How To Guides</h3>
+				</div>
+				<div class="panel-body col-sm-6">
+					<% @how_tos.each do |ht| %>
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<%= ht.how_to_title %>
+							</div>
+							<div class="panel-body">
+								<%= simple_format(ht.how_to_url) %>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

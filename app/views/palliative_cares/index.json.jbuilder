@@ -1,0 +1,1 @@
+json.array! @palliative_cares, partial: 'palliative_cares/palliative_care', as: :palliative_care

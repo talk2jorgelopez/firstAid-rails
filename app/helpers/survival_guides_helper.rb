@@ -1,0 +1,2 @@
+module SurvivalGuidesHelper
+end

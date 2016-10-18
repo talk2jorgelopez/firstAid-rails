@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= content_for?(:title) ? yield(:title) : "FirstAid" %></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- For third-generation iPad with high-resolution Retina display: -->
+	<!-- Size should be 144 x 144 pixels -->
+	<%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+	<!-- For iPhone with high-resolution Retina display: -->
+	<!-- Size should be 114 x 114 pixels -->
+	<%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+	<!-- For first- and second-generation iPad: -->
+	<!-- Size should be 72 x 72 pixels -->
+	<%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<!-- Size should be 57 x 57 pixels -->
+	<%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+	<!-- For all other devices -->
+	<!-- Size should be 32 x 32 pixels -->
+	<%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<!-- < %= stylesheet_link_tag "application", :media => "all" %> -->
+	<!-- < %= javascript_include_tag "application" %>  -->
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
+</head>
+<body>
+<nav class="navbar bg-primary navbar-default">
+	<div class="container-fluid">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#firstAidNav" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/home">First Aid App</a>
+			<div class="collapse navbar-collapse bg-inverse p-a-1 " id="firstAidNav">
+				<ul id="firstAidNav-list" class="nav navbar-nav">
+					<li class="active"><%= link_to "Home", "/home"  %></li>
+					<li><%= link_to "Palliative Care", home_palliative_care_path  %></li>
+					<li><%= link_to "How to", home_how_to_path  %></li>
+					<li><%= link_to "Survival Guide", home_survival_guide_path  %></li>
+				</ul>
+			</div>
+		</div>
+</nav>
+
+<!--&#9776;-->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-9">
+			<%= bootstrap_flash %>
+			<%= yield %>
+		</div>
+		<div class="col-sm-3">
+			<div class="well sidebar-nav">
+				<h4>Quick Search</h4>
+				<ul class="nav nav-list">
+					<li><%= link_to "Severity", "/severities"  %></li>
+					<li><%= link_to "Vitals", "/vitals"  %></li>
+					<li><%= link_to "Symptoms", "/symptoms"  %></li>
+				</ul>
+			</div><!--/.well -->
+		</div><!--/span-->
+	</div><!--/row-->
+</div>
+
+<nav class="bottom navbar navbar-inverse navbar-fixed-bottom" style="color: #FFF">
+	<div class="container-fluid">
+		<div class="bottom navbar-header">
+			<p class="bottom navbar-brand">To Do:</p>
+			<ul class="bottom nav navbar-nav" style="color: #FFF;">
+				<li class="bottom white"><%= link_to "Tasks", "#"  %></li>
+				<li><%= link_to "Timers", "#"  %></li>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-left: 12px; color: #fff">&copy; IT 251 2016</p>
+</nav>
+
+</body>
+</html>

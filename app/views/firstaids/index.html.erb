@@ -1,0 +1,42 @@
+<%- model_class = Firstaid -%>
+<div class="page-header">
+  <h3> First Aid Entry</h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th>First Aid Name</th>
+      <th>First Aid Description</th>
+      <th><%= model_class.human_attribute_name(:symptom_id) %></th>
+      <th><%= model_class.human_attribute_name(:vital_id) %></th>
+      <th><%= model_class.human_attribute_name(:severity_id) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @firstaids.each do |firstaid| %>
+      <tr>
+        <td><%= link_to firstaid.id, firstaid_path(firstaid) %></td>
+        <td><%= firstaid.firstAidName %></td>
+        <td><%= firstaid.firstAidDescription %></td>
+        <td><%= firstaid.symptom.symptom_type if firstaid.symptom_id %></td>
+        <td><%= firstaid.vital.vital_type if firstaid.vital_id %></td>
+        <td><%= firstaid.severity.severity_level if firstaid.severity_id %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_firstaid_path(firstaid), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      firstaid_path(firstaid),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_firstaid_path,
+            :class => 'btn btn-primary' %>

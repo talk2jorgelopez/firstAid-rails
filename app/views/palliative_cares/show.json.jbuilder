@@ -1,0 +1,1 @@
+json.partial! "palliative_cares/palliative_care", palliative_care: @palliative_care

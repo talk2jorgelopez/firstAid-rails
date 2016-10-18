@@ -1,0 +1,38 @@
+<%- model_class = PalliativeCare -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:pCare_title) %></th>
+      <th><%= model_class.human_attribute_name(:pCare_para1) %></th>
+      <th><%= model_class.human_attribute_name(:pCare_para2) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @palliative_cares.each do |palliative_care| %>
+      <tr>
+        <td><%= link_to palliative_care.id, palliative_care_path(palliative_care) %></td>
+        <td><%= palliative_care.pCare_title %></td>
+        <td><%= palliative_care.pCare_para1 %></td>
+        <td><%= palliative_care.pCare_para2 %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_palliative_care_path(palliative_care), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      palliative_care_path(palliative_care),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_palliative_care_path,
+            :class => 'btn btn-primary' %>

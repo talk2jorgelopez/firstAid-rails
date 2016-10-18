@@ -1,0 +1,1 @@
+json.array! @firstaids, partial: 'firstaids/firstaid', as: :firstaid

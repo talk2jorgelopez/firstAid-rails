@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pCare_title: MyString
+  pCare_para1: MyText
+  pCare_para2: MyText
+
+two:
+  pCare_title: MyString
+  pCare_para1: MyText
+  pCare_para2: MyText

@@ -1,0 +1,38 @@
+<%- model_class = HowTo -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:how_to_id) %></th>
+      <th><%= model_class.human_attribute_name(:how_to_title) %></th>
+      <th><%= model_class.human_attribute_name(:how_to_url) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @how_tos.each do |how_to| %>
+      <tr>
+        <td><%= link_to how_to.id, how_to_path(how_to) %></td>
+        <td><%= how_to.how_to_id %></td>
+        <td><%= how_to.how_to_title %></td>
+        <td><%= how_to.how_to_url %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_how_to_path(how_to), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      how_to_path(how_to),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_how_to_path,
+            :class => 'btn btn-primary' %>

@@ -1,0 +1,38 @@
+<%- model_class = SurvivalGuide -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:guide_title) %></th>
+      <th><%= model_class.human_attribute_name(:guide_para1) %></th>
+      <th><%= model_class.human_attribute_name(:guide_para2) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @survival_guides.each do |survival_guide| %>
+      <tr>
+        <td><%= link_to survival_guide.id, survival_guide_path(survival_guide) %></td>
+        <td><%= survival_guide.guide_title %></td>
+        <td><%= survival_guide.guide_para1 %></td>
+        <td><%= survival_guide.guide_para2 %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_survival_guide_path(survival_guide), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      survival_guide_path(survival_guide),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_survival_guide_path,
+            :class => 'btn btn-primary' %>

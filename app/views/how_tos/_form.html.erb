@@ -1,0 +1,48 @@
+<%= form_for @how_to, :html => { :class => "form-horizontal how_to" } do |f| %>
+
+  <% if @how_to.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@how_to.errors.count, "error") %> prohibited this how_to from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @how_to.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :how_to_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :how_to_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:how_to_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :how_to_title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :how_to_title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:how_to_title) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :how_to_url, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :how_to_url, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:how_to_url) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                how_tos_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

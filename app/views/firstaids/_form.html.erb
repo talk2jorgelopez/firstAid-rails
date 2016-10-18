@@ -1,0 +1,65 @@
+<%= form_for @firstaid, :html => { :class => "form-horizontal firstaid" } do |f| %>
+
+  <% if @firstaid.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@firstaid.errors.count, "error") %> prohibited this firstaid from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @firstaid.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :firstAidName, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :firstAidName, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:firstAidName) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :firstAidDescription, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :firstAidDescription, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:firstAidDescription) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :symptom_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <!-- %= f.select :symptom_id, :class => 'form-control' % -->
+	    <%= f.select(:symptom_id, Symptom.all.collect { |s| [ s.symptom_type, s.id] }, :include_blank => true, :prompt => "Please Select a Symptom") %>
+    </div>
+    <%=f.error_span(:symptom_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :vital_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <!-- %= f.select :vital_id, :class => 'form-control' % -->
+	    <%= f.select(:vital_id, Vital.all.collect { |v| [ v.vital_type, v.id] }, :include_blank => true, :prompt => "Please Select a Vital") %>
+    </div>
+    <%=f.error_span(:vital_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :severity_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <!-- %= f.select :severity_id, :class => 'form-control' % -->
+	    <%= f.select(:severity_id, Severity.all.collect { |sl| [ sl.severity_level, sl.id] }, :include_blank => true, :prompt => "Please Select a Severity") %>
+    </div>
+    <%=f.error_span(:severity_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                firstaids_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

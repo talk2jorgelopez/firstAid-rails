@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guide_title: MyString
+  guide_para1: MyText
+  guide_para2: MyText
+
+two:
+  guide_title: MyString
+  guide_para1: MyText
+  guide_para2: MyText
