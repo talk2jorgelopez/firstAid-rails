@@ -1,19 +1,16 @@
 class SearchbyController < ApplicationController
-	#before_action :set_firstaid
 
 	def index
-
-
-		#@vitals = Vital.all
+		#empty container
 	end
 
 	def firstaids
 		@firstaids=Firstaid.all
 		if params[:search]
 			@firstaids = Firstaid.search(params[:search]).order("created_at DESC")
-			render 'searchby/firstaids_result'
+			render 'searchby/firstaids_result' #Redirect to the page no flash hash
 		else
-			render 'searchby/firstaids'
+			render 'searchby/firstaids' #Redirect to the page no flash hash
 		end
 	end
 
@@ -25,9 +22,9 @@ class SearchbyController < ApplicationController
 		@symptoms = Symptom.all
 		if params[:search]
 			@symptoms = Symptom.search(params[:search]).order("created_at DESC")
-			render 'searchby/symptoms_result'
+			render 'searchby/symptoms_result' #Redirect to the page no flash hash
 		else
-			render 'searchby/symptoms'
+			render 'searchby/symptoms' #Redirect to the page no flash hash
 		end
 	end
 
@@ -39,9 +36,9 @@ class SearchbyController < ApplicationController
 		@vitals = Vital.all
 		if params[:search]
 			@vitals = Vital.search(params[:search]).order("created_at DESC")
-			render 'searchby/vitals_result'
+			render 'searchby/vitals_result' #Redirect to the page no flash hash
 		else
-			render 'searchby/vitals'
+			render 'searchby/vitals' #Redirect to the page no flash hash
 		end
 	end
 

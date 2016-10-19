@@ -10,35 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ * require_self
  *= require jquery-ui
- *= require jquery-ui/core
- *= require jquery-ui/theme
- *= require jquery-ui/draggable
- *= require jquery-ui/resizable
- *= require jquery-ui/selectable
- *= require jquery-ui/sortable
- *= require jquery-ui/accordion
- *= require jquery-ui/autocomplete
- *= require jquery-ui/button
- *= require jquery-ui/datepicker
- *= require jquery-ui/dialog
- *= require jquery-ui/menu
- *= require jquery-ui/progressbar
- *= require jquery-ui/selectmenu
- *= require jquery-ui/slider
- *= require jquery-ui/spinner
- *= require jquery-ui/tabs
- *= require jquery-ui/tooltip
- *= require jquery-ui/datepicker
- *= require jquery.mobile.custom.theme.min
- *= require jquery.mobile.custom.structure.min
- */
-body {
-	padding-top: 36px;
-	padding-bottom: 96px;
-}
+ * require bootstrap_and_overrides
+ * require twitter-bootstrap-static/bootstrap
+ * require twitter-bootstrap-static/sprites
+ * require rails_bootstrap_forms
+ * require dataTables/extras/dataTables.responsive
+ * require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ * require_tree .
+ *= require jquery.mobile
+ * require jquery.mobile.custom.structure.min
+ * require jquery.mobile.custom.theme.css
+  */
+/*
 a, a:hover, a:visited, a:focus {
 	color: white;
 }
@@ -51,29 +36,6 @@ a, a:hover, a:visited, a:focus {
 .bottom a:visited
 {
 	color: white;
-}
-main
-{
-	margin-top: 32px;
-}
-h1 {
-	font-size: 22px;
-}
-h2 {
-	font-size: 20px;
-}
-h3 {
-	font-size: 18px;
-}
-h4 {
-	font-size: 16px;
-}
-h5 {
-	font-size: 14px;
-}
-.navbar-brand
-{
-	font-size: 18px;
 }
 .panel-footer  {
 	word-break:break-all
@@ -118,7 +80,7 @@ h5 {
 	text-align: center;
 	text-decoration: none;
 }
-/*.bottom a:link, a:hover, a:visited
+.bottom a:link, a:hover, a:visited
 {
 	color: #FFFFFF;
 	background-color: black;
@@ -129,7 +91,8 @@ a.bottom:link, a.bottom:hover, a.bottom:visited
 	color: #FFFFFF;
 	background-color: black;
 	text-decoration: none;
-}*/
+
+}
 .bottom.nav-bar.li a:hover
 {
 	text-decoration: none;
@@ -142,4 +105,31 @@ div.bottom
 .nav-top
 {
 	margin-bottom: 24px;
+}*/
+body {
+	padding-top: 36px;
+	padding-bottom: 96px;
+}
+main
+{
+	margin-top: 32px;
+}
+h1 {
+	font-size: 22px;
+}
+h2 {
+	font-size: 20px;
+}
+h3 {
+	font-size: 18px;
+}
+h4 {
+	font-size: 16px;
+}
+h5 {
+	font-size: 14px;
+}
+.navbar-brand
+{
+	font-size: 18px;
 }

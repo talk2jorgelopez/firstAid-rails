@@ -1,26 +1,22 @@
-<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="panel">
+<div class="row col-sm-12">
+	<div class="panel">
+		<div class="panel-heading">
+			<h3>Survival Guides</h3>
+		</div>
+		<div class="panel-body col-sm-12">
+			<% @survival_guides.each do |sg| %>
+				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3>How To Guides</h3>
+						<%= sg.guide_title %>
 					</div>
-					<div class="panel-body col-sm-12">
-						<% @survival_guides.each do |sg| %>
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<%= sg.guide_title %>
-								</div>
-								<div class="panel-body">
-									<%= simple_format(sg.guide_para1) %>
-								</div>
-								<div class="panel-footer">
-									<%= simple_format(sg.guide_para2) %>
-								</div>
-							</div>
-						<% end %>
+					<div class="panel-body">
+						<%= simple_format(sg.guide_para1) %>
+					</div>
+					<div class="panel-footer">
+						<%= simple_format(sg.guide_para2) %>
 					</div>
 				</div>
-			</div>
+			<% end %>
 		</div>
+	</div>
 </div>

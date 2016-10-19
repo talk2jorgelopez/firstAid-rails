@@ -10,15 +10,38 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require dataTables/jquery.dataTables
-//= require dataTables/extras/dataTables.responsive
-//= require dataTables/jquery.dataTables
-//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require jquery-ui
-//= require twitter/bootstrap
+//= require jquery-ui/core
+//= require jquery-ui/widget
+//= require jquery-ui/mouse
+//= require jquery-ui/position
+//= require jquery-ui/draggable
+//= require jquery-ui/droppable
+//= require jquery-ui/resizable
+//= require jquery-ui/selectable
+//= require jquery-ui/sortable
+//= require jquery-ui/accordion
+//= require jquery-ui/autocomplete
+//= require jquery-ui/button
+//= require jquery-ui/datepicker
+//= require jquery-ui/dialog
+//= require jquery-ui/menu
+//= require jquery-ui/progressbar
+//= require jquery-ui/selectmenu
+//= require jquery-ui/slider
+//= require jquery-ui/spinner
+//= require jquery-ui/tabs
+//= require jquery-ui/tooltip
+//= require jquery-ui/datepicker
+//= require jquery-ui/datepicker-pt-BR
+//= require jquery.mobile.custom.min
+//= require turbolinks
 //= require_tree .
-// require jquery.mobile
-//= require jquery.turbolinks
+var ready;
+ready = function()
+{
+};
+$(document).ready(ready);
+$(document).on('page:load', ready);

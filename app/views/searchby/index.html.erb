@@ -1,6 +1,19 @@
-<h1>Search by All</h1>
+<div>
+	<%= form_tag(searchby_index_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+		<%= submit_tag "Search" %>
+	<% end %>
+</div>
 
-<%= form_tag(searchby_index_path, :method => "get", id: "search-form") do %>
-	<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-	<%= submit_tag "Search" %>
-<% end %>
+<a href="#searchPanel" data-role="button" data-inline="true" data-icon="bars">Quick Search</a>
+<div data-role="panel" id="searchPanel" data-theme="b">
+	<h4>Quick Search</h4>
+	<div class="panel-content">
+		<ul class="nav nav-links">
+			<li><%= link_to "First Aid Treatments", searchby_firstaids_path %></li>
+			<li><%= link_to "Vitals", searchby_vitals_path %></li>
+			<li><%= link_to "Symptoms", searchby_symptoms_path %></li>
+		</ul>
+	</div>
+	<a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true">Close panel</a>
+</div><!-- /content wrapper for padding -->

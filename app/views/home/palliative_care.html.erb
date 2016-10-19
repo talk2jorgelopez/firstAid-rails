@@ -1,26 +1,22 @@
-<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="panel">
+<div class="row col-md-12">
+	<div class="panel">
+		<div class="panel-heading">
+			<h3>Palliative Care</h3>
+		</div>
+		<div class="panel-body col-sm-12">
+			<% @palliative_cares.each do |pc| %>
+				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3>How To Guides</h3>
+						<%= pc.pCare_title %>
 					</div>
-					<div class="panel-body col-sm-12">
-						<% @palliative_cares.each do |pc| %>
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<%= pc.pCare_title %>
-								</div>
-								<div class="panel-body">
-									<%= simple_format(pc.pCare_para1) %>
-								</div>
-								<div class="panel-footer">
-									<%= simple_format(pc.pCare_para2) %>
-								</div>
-							</div>
-						<% end %>
+					<div class="panel-body">
+						<%= simple_format(pc.pCare_para1) %>
+					</div>
+					<div class="panel-footer">
+						<%= simple_format(pc.pCare_para2) %>
 					</div>
 				</div>
-			</div>
+			<% end %>
 		</div>
+	</div>
 </div>
