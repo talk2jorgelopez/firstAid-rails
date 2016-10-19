@@ -1,0 +1,2 @@
+module SearchbymobileHelper
+end

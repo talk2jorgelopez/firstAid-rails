@@ -1,0 +1,19 @@
+<div data-turbolinks="false">
+	<div class="row">
+	<div class="col-xs-12">
+		<h4>Search by symptoms</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<hr>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<%= form_tag(searchbymobile_symptoms_path, :method => "get", id: "search-form") do %>
+			<%= text_field_tag :search, params[:search], placeholder: "Search Symptoms" %>
+			<%= submit_tag "Search" %>
+		<% end %>
+	</div>
+</div></div>

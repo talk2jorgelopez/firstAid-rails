@@ -1,4 +1,39 @@
 /*
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
+
+
+@media (max-width: 767px) {
+	.row-fluid.stamp-mobile .stamp1 {
+		width: 48%;
+		margin-left: 4%;
+		float:left;
+	}
+	.row-fluid.stamp-mobile > .stamp1:nth-child(odd){
+		margin-left: 0;
+	}
+}
 */
+.stamp1
+{
+	min-height: 96px;
+	max-height: 640px;
+	min-width: 124px;
+	max-width: 640px;
+	background-color: steelblue;
+	color: #FFF;
+	padding: 0px;
+	margin: 1px;
+}
+div.stamp1.panel.panel-primary a, div.stamp1.panel.panel-primary a:hover
+{
+	color : white;
+	background-color: steelblue;
+	text-decoration: none;
+}
+div.stamp1.panel.panel-primary a:visited, div.stamp1.panel.panel-primary a:link
+{
+	color : white;
+	background-color: steelblue;
+	text-decoration: none;
+}

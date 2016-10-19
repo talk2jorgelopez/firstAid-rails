@@ -10,15 +10,27 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require jquery
-//= require jquery_ujs
-//= require dataTables/jquery.dataTables
-//= require dataTables/extras/dataTables.responsive
-//= require dataTables/jquery.dataTables
-//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
-//= require jquery-ui
-//= require twitter/bootstrap
-//= require_tree .
-// require jquery.mobile
 //= require jquery.turbolinks
+//= require jquery_ujs
+// require jquery-ui
+// require jquery-ui/core
+// require jquery-ui/widget
+// require jquery-ui/accordion
+// require jquery-ui/autocomplete
+// require jquery-ui/button
+// require jquery-ui/dialog
+// require jquery-ui/menu
+// require jquery-ui/tabs
+// require jquery-ui/tooltip
+// require jquery-ui/datepicker
+// require jquery-ui/datepicker-pt-BR
+//= require_tree .
+//= require twitter/bootstrap
+//= require drawer.min
+//= require turbolinks
+
+$(document).on('turbolinks:load', function()
+{
+
+});
