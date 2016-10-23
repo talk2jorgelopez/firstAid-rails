@@ -13,8 +13,8 @@
   <tbody>
     <% @symptoms.each do |symptom| %>
       <tr>
-        <td><%= link_to symptom.id, symptom_path(symptom) %></td>
-        <td><%= symptom.symptom_type %></td>
+        <td><%= link_to symptom.id, symptom_path(symptom) %> | <%= symptoms_path( :id => symptom.id, :format => :json ) %></td>
+        <td><%= symptom.symptom_type %> | <%= symptoms_path( :symptom_type => symptom.symptom_type, :format => :json ) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_symptom_path(symptom), :class => 'btn btn-default btn-xs' %>
@@ -28,6 +28,8 @@
     <% end %>
   </tbody>
 </table>
+
+<p>Json URL =
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_symptom_path,

@@ -38,6 +38,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
+  config.assets.precompile += %w( ionic/ionic.min.js)
   config.web_console.whiny_requests = false
 end

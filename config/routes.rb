@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'searchbymobile/emergency'
-
-  get 'searchbymobile/symptoms'
-
-  get 'searchbymobile/vitals'
-
 	resources :firstaids
 	resources :palliative_cares
 	resources :survival_guides
@@ -14,6 +8,15 @@ Rails.application.routes.draw do
 	resources :how_tos
 
 	match ':controller(/:action(/:id))', :via => [:get, :post]
+	
+	#get 'symptoms/symptoms.json?=1'
+	
+	get 'searchbymobile/emergency'
+
+	get 'searchbymobile/symptoms'
+
+	get 'searchbymobile/vitals'
+
 
 	get 'searchby/index'
 
@@ -26,14 +29,14 @@ Rails.application.routes.draw do
 	get 'searchby/vitals'
 	post 'searchby/vitals'
 
-  get 'searchbymobile/emergency'
-  post 'searchbymobile/emergency'
+	get 'searchbymobile/emergency'
+	post 'searchbymobile/emergency'
 
-  get 'searchbymobile/symptoms'
-  post 'seasearchbymobilerchby/symptoms'
+	get 'searchbymobile/symptoms'
+	post 'seasearchbymobilerchby/symptoms'
 
-  get 'searchbymobile/vitals'
-  post 'searchbymobile/vitals'
+	get 'searchbymobile/vitals'
+	post 'searchbymobile/vitals'
 
 	get 'firstaids/index'
 	post 'firstaids/index'

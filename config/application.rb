@@ -25,5 +25,13 @@ module FirstAid
      config.web_console.whiny_requests = false
      config.web_console.whitelisted_ips = '10.0.0.0/16'
      config.web_console.whitelisted_ips = '10.0.123.0/16'
+	 config.middleware.insert_before 0, "Rack::Cors" do
+		 allow do
+			 origins '*'
+			 resource '*', :headers => :any, :methods => [:get, :post, :options]
+		 end
+	 end
+	  
   end
+    
 end

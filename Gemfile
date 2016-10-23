@@ -9,7 +9,7 @@ gem 'rails', '4.2.6'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-#gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 #FastImage finds the size or type of an image given its uri by fetching as little as needed.
@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem "font-ionicons-rails"
 # Use jquery-ui as the JavaScript library
 #gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 #Allow inclusion of the pre built jquery themes in the asset pipeline without having to edit the files each time.
@@ -40,7 +40,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'rack-cors', :require => 'rack/cors'
 #A MODERN, CONCURRENT WEB SERVER FOR RUBY
 gem 'puma', '~> 3.6'
 # Modern concurrency tools for Ruby.
@@ -52,13 +52,15 @@ gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 #rails-bootstrap-forms is a Rails form builder
 #gem 'bootstrap_form'
 #Rack::Cache is suitable as a quick drop-in component to enable HTTP caching for Rack-based applications
-gem 'rack-cache', '~> 1.6', '>= 1.6.1'
+#gem 'rack-cache', '~> 1.6', '>= 1.6.1'
 # Use jquery as the JavaScript-database library
 #gem 'jquery-datatables-rails', '~> 3.4'
 # Use jquery-mobile as the JavaScript library
 ##gem 'jquery_mobile_rails', '~>1.4.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'devise_token_auth'
+gem 'ionic-rails-engine'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -10,32 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require bootstrap_and_overrides
  *= require_self
- * require jquery-ui
- * require jquery-ui/core
- * require jquery-ui/theme
- * require jquery-ui/draggable
- * require jquery-ui/resizable
- * require jquery-ui/selectable
- * require jquery-ui/sortable
- = require jquery-ui/accordion
- = require jquery-ui/autocomplete
- * require jquery-ui/button
- * require jquery-ui/datepicker
- * require jquery-ui/dialog
- * require jquery-ui/menu
- * require jquery-ui/progressbar
- * require jquery-ui/selectmenu
- * require jquery-ui/slider
- * require jquery-ui/spinner
- * require jquery-ui/tabs
- * require jquery-ui/tooltip
- * require bootstrap-drawer.min
+ *= require_tree .
  */
 body {
-	padding-top: 36px;
-	padding-bottom: 96px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
 a, a:hover, a:visited, a:focus {
 	color: white;
@@ -136,8 +117,4 @@ a.bottom:focus, a.bottom:link, a.bottom:hover, a.bottom:visited
 div.bottom
 {
 	background-color: black;
-}
-.nav-top
-{
-	margin-bottom: 24px;
 }

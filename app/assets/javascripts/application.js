@@ -13,23 +13,9 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-// require jquery-ui
-// require jquery-ui/core
-// require jquery-ui/widget
-// require jquery-ui/accordion
-// require jquery-ui/autocomplete
-// require jquery-ui/button
-// require jquery-ui/dialog
-// require jquery-ui/menu
-// require jquery-ui/tabs
-// require jquery-ui/tooltip
-// require jquery-ui/datepicker
-// require jquery-ui/datepicker-pt-BR
-//= require_tree .
 //= require twitter/bootstrap
-//= require drawer.min
+//= require_tree .
 //= require turbolinks
-
 $(document).on('turbolinks:load', function()
 {
 
